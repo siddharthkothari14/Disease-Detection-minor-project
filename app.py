@@ -4,13 +4,13 @@ import numpy as np
 import pandas as pd
 
 # Load model and encoder
-model = pickle.load(open(r"C:\Users\siddh\OneDrive\Desktop\Project\car price\pythonProject\disease_model.pkl", "rb"))
-le = pickle.load(open(r"C:\Users\siddh\OneDrive\Desktop\Project\car price\pythonProject\label_encoder.pkl", "rb"))
+model = pickle.load(open(r"disease_model.pkl", "rb"))
+le = pickle.load(open(r"label_encoder.pkl", "rb"))
 
 st.title("Disease Prediction App")
 
 # Load your original dataset to get symptom names
-df = pd.read_csv(r"C:\Users\siddh\OneDrive\Desktop\Project\car price\pythonProject\Training.csv")
+df = pd.read_csv(r"Training.csv")
 symptoms = df.drop('prognosis', axis=1).columns.tolist()
 
 # User selects symptoms
